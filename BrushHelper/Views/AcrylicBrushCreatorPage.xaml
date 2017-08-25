@@ -95,12 +95,12 @@
                             Visibility="Collapsed"/>
                 </StackPanel>
 
-
+                <!-- TODO: Final a nice solution for the sliders -->
                 <Slider Header="Opacity"
                         Margin="0,12,0,0"
                         Value="{x:Bind Brush.Opacity, Mode=TwoWay}"
-                        Minimum="0"
-                        Maximum="1"
+                        Minimum="-0.1"
+                        Maximum="1.1"
                         StepFrequency="0.1"                        
                         SmallChange="0.1"
                         LargeChange="0.1"
@@ -109,8 +109,8 @@
                 <Slider Header="Tint Opacity"
                         Margin="0,12,0,0"
                         Value="{x:Bind Brush.TintOpacity, Mode=TwoWay}"
-                        Minimum="0"
-                        Maximum="1"
+                        Minimum="-0.1"
+                        Maximum="1.1"
                         StepFrequency="0.1"                        
                         SmallChange="0.1"
                         LargeChange="0.1"
@@ -161,7 +161,8 @@
                     Width="72"
                     Margin="0,-12,-12,-12"
                     Padding="12"
-                    VerticalAlignment="Center">
+                    VerticalAlignment="Center"
+                    Click="{x:Bind Brush.CopyBrushToClipboard}">
                 <Button.Content>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="&#xE16F;"

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.UI;
 
 namespace BrushHelper.ViewModels
@@ -33,7 +34,11 @@ namespace BrushHelper.ViewModels
         public double Opacity
         {
             get { return This.Opacity; }
-            set { SetProperty(This.Opacity, value, () => This.Opacity = value); }
+            set
+            {
+                value = Math.Round(value, 1);
+                SetProperty(This.Opacity, value, () => This.Opacity = value);
+            }
         }
 
         public Color TintColor
@@ -45,7 +50,11 @@ namespace BrushHelper.ViewModels
         public double TintOpacity
         {
             get { return This.TintOpacity; }
-            set { SetProperty(This.TintOpacity, value, () => This.TintOpacity = value); }
+            set
+            {
+                value = Math.Round(value, 1);
+                SetProperty(This.TintOpacity, value, () => This.TintOpacity = value);
+            }
         }
 
         public string XamlBrush
@@ -57,7 +66,7 @@ namespace BrushHelper.ViewModels
                 brushString.Append("BackgroundSource='" + This.BackgroundSource + "' ");
                 brushString.Append("Opacity='" + This.Opacity + "' ");
                 brushString.Append("TintColor='" + This.TintColor + "' ");
-                brushString.Append("TintOpacity='" + This.TintOpacity + "' ");
+                brushString.Append("TintOpacity='" + This.TintOpacity + "'");
                 brushString.Append("/>");
 
                 return brushString.ToString();
@@ -70,5 +79,13 @@ namespace BrushHelper.ViewModels
         //    set { SetProperty(This.FallbackColor, value, () => This.FallbackColor = value); }
         //}
 
+
+        public void CopyBrushToClipboard()
+        {
+            DataPackage data = new DataPackage();
+            data.RequestedOperation = DataPackageOperation.Copy;
+            data.SetText(XamlBrush);
+            Clipboard.SetContent(data);
+        } 
     }
 }
