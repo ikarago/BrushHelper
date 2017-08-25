@@ -20,10 +20,11 @@
         <!-- Example borders -->
         <StackPanel x:Name="BorderExample"
                     Grid.Row="0"
-                    Orientation="Vertical">
+                    Orientation="Vertical"
+                    Padding="12">
             <Border x:Name="borderLight"
                 RequestedTheme="Light"
-                Height="180"
+                Height="148"
                 HorizontalAlignment="Stretch"
                 BorderBrush="{ThemeResource SystemAccentColor}"
                 BorderThickness="0,0,0,2">
@@ -49,7 +50,7 @@
             </Border>
             <Border x:Name="borderDark"
                 RequestedTheme="Dark"
-                Height="180"
+                Height="148"
                 HorizontalAlignment="Stretch">
                 <Border.Background>
                     <media:AcrylicBrush x:Name="MainBrushDark" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}"  TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
@@ -81,20 +82,28 @@
         <ScrollViewer Grid.Row="1"
                       Padding="12,0">
             <StackPanel ScrollViewer.VerticalScrollMode="Enabled">
-                <ComboBox x:Name="cmBackdrop"
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <ComboBox x:Name="cmBackdrop"
                           Margin="0,24,0,12"
                           MinWidth="240"
-                          HorizontalAlignment="Center"
                           Header="Backdrop options"
                           SelectedItem="{x:Bind Brush.BackgroundSource, Mode=TwoWay}"
                           SelectionChanged="cmBackdrop_SelectionChanged"/>
+                    <Button x:Name="btnBackground"
+                            Content="..."
+                            Visibility="Collapsed"/>
+                </StackPanel>
+
 
                 <Slider Header="Opacity"
                         Margin="0,12,0,0"
                         Value="{x:Bind Brush.Opacity, Mode=TwoWay}"
                         Minimum="0"
                         Maximum="1"
-                        StepFrequency="0.1"
+                        StepFrequency="0.1"                        
+                        SmallChange="0.1"
+                        LargeChange="0.1"
                         Width="240"
                         ValueChanged="Slider_ValueChanged"/>
                 <Slider Header="Tint Opacity"
@@ -102,9 +111,11 @@
                         Value="{x:Bind Brush.TintOpacity, Mode=TwoWay}"
                         Minimum="0"
                         Maximum="1"
-                        StepFrequency="0.1"
+                        StepFrequency="0.1"                        
+                        SmallChange="0.1"
+                        LargeChange="0.1"
                         Width="240"
-                        ValueChanged="Slider_ValueChanged"/>
+                        ValueChanged="Slider_ValueChanged" />
 
 
                 <!--</StackPanel>-->

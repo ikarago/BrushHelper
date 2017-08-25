@@ -11,7 +11,8 @@
         <Pivot>
             <PivotItem Header="Normal">
                 <StackPanel Orientation="Horizontal">
-                    <ListView Header="Light">
+                    <ListView Header="Light"
+                              SelectionMode="None">
                         <!-- Accent -->
                         <ListViewItem Height="48"
                                   Width="240"
@@ -187,7 +188,8 @@
                         </ListViewItem>
                     </ListView>
 
-                    <ListView Header="Dark">
+                    <ListView Header="Dark"
+                              SelectionMode="None">
                         <!-- Accent -->
                         <ListViewItem Height="48"
                                   Width="240"
@@ -373,11 +375,11 @@
                         <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Backgrounds/iu.jpg"/>
                     </Grid.Background>
                     <StackPanel Orientation="Horizontal">
-                        --><!-- Light --><!--
+                         --><!--Light--><!-- 
                         <ListView Header="Light"
                                   Background="Transparent">
-                            --><!-- Window -->
-                            <!-- Normal --><!--
+                             --><!--Window--> 
+                             <!--Normal--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicWindowBrush}"
@@ -399,7 +401,7 @@
                                 <TextBlock Text="SystemControlAcrylicMediumWindowBrush" />
                             </ListViewItem>
                             
-                            --><!-- Accent --><!--
+                             --><!--Accent--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicAccentMediumHighWindowBrush}"
@@ -419,8 +421,8 @@
                                 <TextBlock Text="SystemControlAcrylicAccentDark2MediumHighWindowBrush" />
                             </ListViewItem>
                             
-                            --><!-- Element -->
-                            <!-- Normal --><!--
+                             --><!--Element--> 
+                             <!--Normal--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicElementBrush}"
@@ -442,7 +444,7 @@
                                 <TextBlock Text="SystemControlAcrylicMediumElementBrush" />
                             </ListViewItem>
 
-                            --><!-- Accent --><!--
+                             --><!--Accent--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicAccentMediumHighElementBrush}"
@@ -463,11 +465,11 @@
                             </ListViewItem>
                         </ListView>
 
-                        --><!-- Dark --><!--
+                         --><!--Dark--><!-- 
                         <ListView Header="Dark"
                                   Background="Transparent">
-                            --><!-- Window -->
-                            <!-- Normal --><!--
+                             --><!--Window--> 
+                             <!--Normal--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicWindowBrush}"
@@ -489,7 +491,7 @@
                                 <TextBlock Text="SystemControlAcrylicMediumWindowBrush" />
                             </ListViewItem>
 
-                            --><!-- Accent --><!--
+                             --><!--Accent--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicAccentMediumHighWindowBrush}"
@@ -509,8 +511,8 @@
                                 <TextBlock Text="SystemControlAcrylicAccentDark2MediumHighWindowBrush" />
                             </ListViewItem>
 
-                            --><!-- Element -->
-                            <!-- Normal --><!--
+                             --><!--Element--> 
+                             <!--Normal--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicElementBrush}"
@@ -532,7 +534,7 @@
                                 <TextBlock Text="SystemControlAcrylicMediumElementBrush" />
                             </ListViewItem>
 
-                            --><!-- Accent --><!--
+                             --><!--Accent--><!-- 
                             <ListViewItem Height="48"
                                       Width="240"
                                           Background="{ThemeResource SystemControlAcrylicAccentMediumHighElementBrush}"
@@ -558,10 +560,11 @@
                 </Grid>
             </PivotItem>-->
 
-            <PivotItem Header="Brush Maker">
-                <ContentPresenter x:Name="cpAcrylicBrushMaker"
-                                  HorizontalAlignment="Stretch"
-                                  VerticalAlignment="Stretch"/>
+            <PivotItem Header="Brush Maker"
+                       Margin="0">
+                <Frame x:Name="FrameAcrylicBrushMaker"                       
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"/>
             </PivotItem>
         </Pivot>
     </Grid>

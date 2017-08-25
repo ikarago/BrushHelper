@@ -25,7 +25,7 @@ namespace BrushHelper.Views
         public MainPage()
         {
             this.InitializeComponent();
-            //cpAcrylicBrushMaker.N = (typeof(Views.AcrylicBrushCreatorPage));
+            FrameAcrylicBrushMaker.Navigate(typeof(Views.AcrylicBrushCreatorPage));
         }
     }
 }
