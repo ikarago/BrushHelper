@@ -2,7 +2,13 @@
     x:Class="BrushHelper.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:BrushHelper"
-    RequestedTheme="Light">
-
+    xmlns:local="using:BrushHelper">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <DEPControlsThemeResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!--<ResourceDictionary Source="ms-appx:///Themes/Fluent.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

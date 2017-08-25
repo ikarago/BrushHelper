@@ -1,0 +1,167 @@
+﻿<Page
+    x:Class="BrushHelper.Views.AcrylicBrushCreatorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BrushHelper.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="using:Microsoft.UI.Xaml.Media"
+    xmlns:ui="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        
+        <!-- Example borders -->
+        <StackPanel x:Name="BorderExample"
+                    Grid.Row="0"
+                    Orientation="Vertical">
+            <Border x:Name="borderLight"
+                RequestedTheme="Light"
+                Height="180"
+                HorizontalAlignment="Stretch"
+                BorderBrush="{ThemeResource SystemAccentColor}"
+                BorderThickness="0,0,0,2">
+                <Border.Background>                    
+                    <media:AcrylicBrush x:Name="MainBrushLight" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}" TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
+                </Border.Background>
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Button Content="Button" />
+                    <TextBlock Text="Light theme"
+                            VerticalAlignment="Center"
+                            Margin="48,0"/>
+                    <Button Content="&#xE122;"
+                        FontSize="18"
+                        FontFamily="Segoe MDL2 Assets"
+                        Foreground="{ThemeResource SystemAccentColor}"
+                        Background="Transparent"
+                        Height="48"
+                        Width="48" />
+
+                </StackPanel>
+            </Border>
+            <Border x:Name="borderDark"
+                RequestedTheme="Dark"
+                Height="180"
+                HorizontalAlignment="Stretch">
+                <Border.Background>
+                    <media:AcrylicBrush x:Name="MainBrushDark" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}"  TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
+                </Border.Background>
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Button Content="Button" />
+                    <TextBlock Text="Dark theme"
+                            VerticalAlignment="Center"
+                            Margin="48,0"/>
+                    <Button Content="&#xE122;"
+                        FontSize="18"
+                        FontFamily="Segoe MDL2 Assets"
+                        Foreground="{ThemeResource SystemAccentColor}"
+                        Background="Transparent"
+                        Height="48"
+                        Width="48" />
+
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+
+           
+            
+            
+        <!-- Editable stuff -->
+        <ScrollViewer Grid.Row="1"
+                      Padding="12,0">
+            <StackPanel ScrollViewer.VerticalScrollMode="Enabled">
+                <ComboBox x:Name="cmBackdrop"
+                          Margin="0,24,0,12"
+                          MinWidth="240"
+                          HorizontalAlignment="Center"
+                          Header="Backdrop options"
+                          SelectedItem="{x:Bind Brush.BackgroundSource, Mode=TwoWay}"
+                          SelectionChanged="cmBackdrop_SelectionChanged"/>
+
+                <Slider Header="Opacity"
+                        Margin="0,12,0,0"
+                        Value="{x:Bind Brush.Opacity, Mode=TwoWay}"
+                        Minimum="0"
+                        Maximum="1"
+                        StepFrequency="0.1"
+                        Width="240"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Slider Header="Tint Opacity"
+                        Margin="0,12,0,0"
+                        Value="{x:Bind Brush.TintOpacity, Mode=TwoWay}"
+                        Minimum="0"
+                        Maximum="1"
+                        StepFrequency="0.1"
+                        Width="240"
+                        ValueChanged="Slider_ValueChanged"/>
+
+
+                <!--</StackPanel>-->
+
+
+                <TextBlock Text="Tint Colour"
+                           HorizontalAlignment="Center"
+                           Margin="0,12,0,6"
+                           FontWeight="Bold"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                <ui:ColorPicker Color="{x:Bind Brush.TintColor, Mode=TwoWay}"
+                                ColorChanged="ColorPicker_ColorChanged"
+                                Margin="0,0,0,24"/>
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+        <Grid x:Name="GridBrush"
+              Grid.Row="2"
+              Background="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}"                  
+              Padding="12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="tblXamlBrush"
+                       Grid.Column="0"
+                       Text="{x:Bind Brush.XamlBrush}"
+                       TextWrapping="Wrap"
+                       IsTextSelectionEnabled="True"                       
+                       Margin="0,0,12,0"
+                       VerticalAlignment="Center" />
+
+            <Border Grid.Column="1"
+                    Background="{ThemeResource SystemControlForegroundBaseMediumBrush}"
+                    Width="1" />
+            <Button x:Name="btnCopy"
+                    Grid.Column="2"
+                    Background="Transparent"
+                    MinHeight="72"
+                    Width="72"
+                    Margin="0,-12,-12,-12"
+                    Padding="12"
+                    VerticalAlignment="Center">
+                <Button.Content>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="&#xE16F;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="22"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="Copy" 
+                                   Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
