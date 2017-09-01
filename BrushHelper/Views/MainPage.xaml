@@ -31,15 +31,15 @@
 
             </PivotItem>
 
-            <!--<PivotItem Header="Acrylic">
-                   <Frame x:Name="FrameAcrylicBrushPage"                       
+            <PivotItem Header="Acrylic">
+                <Frame x:Name="FrameAcrylicBrushPage"                       
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"/>
-            </PivotItem>-->
+            </PivotItem>
 
             <PivotItem Header="Acrylic Brush Maker"
                        Margin="0">
-                <Frame x:Name="FrameAcrylicBrushMaker"                       
+                <Frame x:Name="FrameAcrylicBrushMakerPage"                       
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"/>
             </PivotItem>
