@@ -105,8 +105,14 @@
     <Compile Include="Views\AcrylicBrushCreatorPage.xaml.cs">
       <DependentUpon>AcrylicBrushCreatorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AcrylicBrushPage.xaml.cs">
+      <DependentUpon>AcrylicBrushPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NormalBrushPage.xaml.cs">
+      <DependentUpon>NormalBrushPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +173,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AcrylicBrushPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NormalBrushPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

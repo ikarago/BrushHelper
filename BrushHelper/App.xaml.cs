@@ -5,8 +5,11 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -71,6 +74,8 @@ namespace BrushHelper
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+
+            SetTitlebar();
         }
 
         /// <summary>
@@ -95,6 +100,21 @@ namespace BrushHelper
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private void SetTitlebar()
+        {
+            // Make the buttons transparent
+            ApplicationViewTitleBar titlebar = ApplicationView.GetForCurrentView().TitleBar;
+            titlebar.ButtonBackgroundColor = Colors.Transparent;
+            titlebar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            //titlebar.ButtonForegroundColor = Colors.Black;
+            //titlebar.ForegroundColor = Colors.White;
+
+            // Extend the normal window to the Titlebar for the blur to reach there too
+            CoreApplicationViewTitleBar coreTitlebar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitlebar.ExtendViewIntoTitleBar = true;
+
         }
     }
 }

@@ -20,13 +20,11 @@ namespace BrushHelper.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AcrylicBrushPage : Page
     {
-        public MainPage()
+        public AcrylicBrushPage()
         {
             this.InitializeComponent();
-            FrameNormalBrushPage.Navigate(typeof(Views.NormalBrushPage));
-            FrameAcrylicBrushMaker.Navigate(typeof(Views.AcrylicBrushCreatorPage));
         }
     }
 }
