@@ -5,8 +5,6 @@
     xmlns:local="using:BrushHelper.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:media="using:Microsoft.UI.Xaml.Media"
-    xmlns:ui="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -29,7 +27,7 @@
                 BorderBrush="{ThemeResource SystemAccentColor}"
                 BorderThickness="0,0,0,2">
                 <Border.Background>                    
-                    <media:AcrylicBrush x:Name="MainBrushLight" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}" TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
+                    <AcrylicBrush x:Name="MainBrushLight" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}" TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
                 </Border.Background>
                 <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -53,7 +51,7 @@
                 Height="148"
                 HorizontalAlignment="Stretch">
                 <Border.Background>
-                    <media:AcrylicBrush x:Name="MainBrushDark" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}"  TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
+                    <AcrylicBrush x:Name="MainBrushDark" BackgroundSource="{x:Bind Brush.BackgroundSource}" Opacity="{x:Bind Brush.Opacity}"  TintColor="{x:Bind Brush.TintColor}" TintOpacity="{x:Bind Brush.TintOpacity}" />
                 </Border.Background>
                 <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -126,7 +124,7 @@
                            Margin="0,12,0,6"
                            FontWeight="Bold"
                            Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                <ui:ColorPicker Color="{x:Bind Brush.TintColor, Mode=TwoWay}"
+                <ColorPicker Color="{x:Bind Brush.TintColor, Mode=TwoWay}"
                                 ColorChanged="ColorPicker_ColorChanged"
                                 Margin="0,0,0,24"/>
             </StackPanel>

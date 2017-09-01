@@ -1,5 +1,4 @@
 ﻿using BrushHelper.ViewModels;
-using Microsoft.UI.Xaml.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -79,7 +78,7 @@ namespace BrushHelper.Views
             UpdateBrushes();
         }
 
-        private void ColorPicker_ColorChanged(Microsoft.UI.Xaml.Controls.ColorPicker sender, Microsoft.UI.Xaml.Controls.ColorChangedEventArgs args)
+        private void ColorPicker_ColorChanged(ColorPicker sender, ColorChangedEventArgs args)
         {
             UpdateBrushes();
         }
