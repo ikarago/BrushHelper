@@ -24,6 +24,15 @@
         <Pivot Grid.Row="1"
                Padding="0,6,0,0"
                Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+            <Pivot.RightHeader>
+                <CommandBar Background="Transparent">
+                    <CommandBar.SecondaryCommands>
+                        <AppBarButton x:Name="cbtnAbout"
+                                      Label="About"
+                                      Click="cbtnAbout_Click"/>
+                    </CommandBar.SecondaryCommands>
+                </CommandBar>
+            </Pivot.RightHeader>
             <PivotItem Header="Normal"
                        Margin="0">
                 <Frame x:Name="FrameNormalBrushPage"                       
